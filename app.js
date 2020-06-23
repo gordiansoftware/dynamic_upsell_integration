@@ -11,8 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// const url = "https://api.gordiansoftware.com/v2.2";
-const url = "https://gordian-corev2-test.herokuapp.com/v2.2";
+const url = "https://api.gordiansoftware.com/v2.2";
 
 /* New trip */
 app.post("/trip", async function(req, res, next) {
@@ -23,61 +22,66 @@ app.post("/trip", async function(req, res, next) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      language: "en",
-      currency: "USD",
       country: "US",
-      partner_basket: [
+      currency: "USD",
+      language: "en-US",
+      passengers: [
         {
-          product_type: "ticket",
-          offered_price: {
-            currency: "USD",
-            decimal_places: 2,
-            base_price: 7000,
-            markup: 0,
-            total: 7000
-          },
+          passenger_id: "c333e4d3-f921-451e-a7b9-ff28ef4c858c",
+          first_names: "Van Gogh",
+          surname: "William",
+          passenger_type: "adult",
+          date_of_birth: "2000-01-01",
+          loyalty_program: {
+            airline_id: "NK",
+            number: "123456789",
+            program_name: "Premium",
+            tier_name: "Gold"
+          }
+        },
+        {
+          passenger_id: "f471d892-006e-41c0-9822-7f1f6096bfbb",
+          passenger_type: "adult",
+          date_of_birth: "2019-01-01",
+          first_names: "Ali",
+          surname: "Reza",
+          loyalty_program: {
+            airline_id: "NK",
+            number: "123456789",
+            program_name: "Premium",
+            tier_name: "Gold"
+          }
+        }
+      ],
+      tickets: [
+        {
           journeys: [
             {
               segments: [
                 {
-                  arrival_airport: "LAS",
-                  arrival_time: "2020-08-05T15:54:00-08:00",
-                  departure_airport: "PDX",
-                  departure_time: "2020-08-05T13:38:00-08:00",
-                  fare_basis: "LKX9C3B4",
-                  fare_class: "L",
-                  fare_family: "ECONOMY_BASIC",
-                  marketing_airline: "NK",
-                  marketing_flight_number: "671"
-                }
-              ]
-            },
-            {
-              segments: [
-                {
-                  arrival_airport: "PDX",
-                  arrival_time: "2020-08-10T12:52:00-08:00",
-                  departure_airport: "LAS",
-                  departure_time: "2020-08-10T10:39:00-08:00",
-                  fare_basis: "LKX9C3B4",
-                  fare_class: "L",
-                  fare_family: "ECONOMY_BASIC",
-                  marketing_airline: "NK",
-                  marketing_flight_number: "765",
-                  operating_airline: "NK",
-                  operating_flight_number: "765"
+                  arrival_airport: "SEA",
+                  arrival_time: "2020-07-30T23:07:00-02:00",
+                  departure_airport: "MIA",
+                  departure_time: "2020-07-30T19:35:00-02:00",
+                  fare_basis: "NVAHZSM3",
+                  fare_class: "M",
+                  fare_family: "",
+                  marketing_airline: "AA",
+                  operating_airline: "AA",
+                  marketing_flight_number: "305",
+                  operating_flight_number: "305"
                 }
               ]
             }
-          ]
-        }
-      ],
-      passengers: [
-        {
-          passenger_type: "adult",
-          infant_on_lap: {
-            passenger_type: "infant"
-          }
+          ],
+          offered_price: {
+            base_price: 7000,
+            currency: "USD",
+            decimal_places: 2,
+            markup: 0,
+            total: 7000
+          },
+          state: "offered"
         }
       ]
     })

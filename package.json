@@ -1,7 +1,7 @@
 {
-  "name": "gordian-22",
+  "name": "dynamic-upsell-integration",
   "version": "1.0.0",
-  "description": "",
+  "description": "Example Dynamic Upsell Integration",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js localhost 8080"
