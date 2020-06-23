@@ -1,0 +1,40 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+table {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  border-bottom: #196988 solid 2px;
+}
+
+td {
+  padding: 10px;
+  border-top: #196988 solid 1px;
+}
+
+button {
+  border: #196988 solid 1px;
+  background: #196988;
+  color: #ffffff;
+  box-shadow: none;
+  padding: 10px;
+}
+
+#basket > .invalidMessage {
+  display: none;
+}
+
+#basket.invalid > .invalidMessage {
+  display: block;
+}
