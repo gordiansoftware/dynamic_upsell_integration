@@ -1,15 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>Gordian Plug-in</title>
-    <link rel="stylesheet" href="stylesheets/style.css" />
-    <meta name=“viewport” content=“width=device-width, initial-scale=1.0,
-    user-scalable=0">
-    <script src="https://a78123814727.ngrok.io/build/javascript/v2.2/gordian.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<script src="https://sdk.gordiansoftware.com/javascript/v2.2/gordian.min.js"></script>-->
+    <script src="https://8d7d56f802f3.ngrok.io/build/javascript/v2.2/gordian.min.js"></script>
+    <title>Document</title>
   </head>
-
   <body>
     <h1>Gordian Plug-in</h1>
     <h2>Customer basket</h2>
+    <div id="upsell-container" />
     <div id="basket">
       <table>
         <thead>
@@ -19,8 +22,7 @@
         <tbody id="basket-body"></tbody>
       </table>
     </div>
-    <button id="fulfill">Book</button>
-    <div id="upsell-container" />
+    <button id="fulfill" class="btn">Book</button>
     <script src="/javascripts/index.js" type="text/javascript"></script>
   </body>
 </html>

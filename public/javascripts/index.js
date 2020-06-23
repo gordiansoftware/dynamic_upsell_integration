@@ -15,41 +15,40 @@ const main = async () => {
   }
   console.log(`trip_id: ${trip_id}, trip_access_token: ${trip_access_token}`);
 
-  const onBasketChange = basket => {
+  const onBasketChange = ({ basket }) => {
     console.log("Step 4: handle basket changes");
     var basketBody = document.getElementById("basket-body");
     basketBody.innerHTML = "";
-    for (var booking of basket.bookings) {
-      for (var product of booking.products) {
-        var row = document.createElement("tr");
-        row.classList.remove("invalid");
-        var productCell = document.createElement("td");
-        var priceCell = document.createElement("td");
-        productCell.innerText = product.display_name;
-        priceCell.innerText = window.Gordian.formatPrice(
-          product.price.total,
-          product.price.decimal_places,
-          product.price.currency
-        );
-        var message = document.createElement("message");
+    for (var key in basket) {
+      const product = basket[key];
+      var row = document.createElement("tr");
+      row.classList.remove("invalid");
+      var productCell = document.createElement("td");
+      var priceCell = document.createElement("td");
+      productCell.innerText = product.display_name;
+      priceCell.innerText = window.Gordian.formatPrice(
+        product.price.total.amount,
+        product.price.total.decimal_places,
+        product.price.total.currency
+      );
+      var message = document.createElement("message");
 
-        product.validity = product.validity || { state: "valid" }; // TODO: remove
-        if (product.validity.state === "valid") {
-        } else if (product.validity.state === "checking") {
-          row.classList.add("checking");
-          message.innerText = "Checking if this product is still available...";
-        } else if (product.validity.state === "price_changed") {
-          row.classList.add("price_changed");
-          message.innerText = "The price for this product has changed!";
-        } else if (product.validity.state === "unavailable") {
-          row.classList.add("unavailable");
-          message.innerText = "Sorry, this product is no longer available";
-        }
-        priceCell.appendChild(message);
-        row.appendChild(productCell);
-        row.appendChild(priceCell);
-        basketBody.appendChild(row);
+      product.validity = product.validity || { state: "valid" }; // TODO: remove
+      if (product.validity.state === "valid") {
+      } else if (product.validity.state === "checking") {
+        row.classList.add("checking");
+        message.innerText = "Checking if this product is still available...";
+      } else if (product.validity.state === "price_changed") {
+        row.classList.add("price_changed");
+        message.innerText = "The price for this product has changed!";
+      } else if (product.validity.state === "unavailable") {
+        row.classList.add("unavailable");
+        message.innerText = "Sorry, this product is no longer available";
       }
+      priceCell.appendChild(message);
+      row.appendChild(productCell);
+      row.appendChild(priceCell);
+      basketBody.appendChild(row);
     }
   };
 
