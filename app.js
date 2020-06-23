@@ -27,26 +27,24 @@ app.post("/trip", async function(req, res, next) {
       language: "en-US",
       passengers: [
         {
-          passenger_id: "c333e4d3-f921-451e-a7b9-ff28ef4c858c",
           first_names: "Van Gogh",
           surname: "William",
           passenger_type: "adult",
           date_of_birth: "2000-01-01",
           loyalty_program: {
-            airline_id: "NK",
+            airline_id: "AA",
             number: "123456789",
             program_name: "Premium",
             tier_name: "Gold"
           }
         },
         {
-          passenger_id: "f471d892-006e-41c0-9822-7f1f6096bfbb",
           passenger_type: "adult",
           date_of_birth: "2019-01-01",
           first_names: "Ali",
           surname: "Reza",
           loyalty_program: {
-            airline_id: "NK",
+            airline_id: "AA",
             number: "123456789",
             program_name: "Premium",
             tier_name: "Gold"
@@ -74,6 +72,9 @@ app.post("/trip", async function(req, res, next) {
               ]
             }
           ],
+          metadata: {
+            "your-id": "your-key"
+          },
           offered_price: {
             base_price: 7000,
             currency: "USD",
