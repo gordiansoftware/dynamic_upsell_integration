@@ -32,7 +32,7 @@ app.post("/trip", async function(req, res, next) {
           passenger_type: "adult",
           date_of_birth: "2000-01-01",
           loyalty_program: {
-            airline_id: "AA",
+            airline_id: "VY",
             number: "123456789",
             program_name: "Premium",
             tier_name: "Gold"
@@ -44,7 +44,7 @@ app.post("/trip", async function(req, res, next) {
           first_names: "Ali",
           surname: "Reza",
           loyalty_program: {
-            airline_id: "AA",
+            airline_id: "VY",
             number: "123456789",
             program_name: "Premium",
             tier_name: "Gold"
@@ -57,17 +57,17 @@ app.post("/trip", async function(req, res, next) {
             {
               segments: [
                 {
-                  arrival_airport: "SEA",
-                  arrival_time: "2020-07-30T23:07:00-02:00",
-                  departure_airport: "MIA",
-                  departure_time: "2020-07-30T19:35:00-02:00",
-                  fare_basis: "NVAHZSM3",
-                  fare_class: "M",
+                  departure_airport: "SVQ",
+                  departure_time: "2020-06-28T11:25:00-02:00",
+                  arrival_airport: "BIO",
+                  arrival_time: "2020-06-28T12:45:00-02:00",
+                  fare_basis: "ROWVYHB",
+                  fare_class: "R",
                   fare_family: "",
-                  marketing_airline: "AA",
-                  operating_airline: "AA",
-                  marketing_flight_number: "305",
-                  operating_flight_number: "305"
+                  marketing_airline: "VY",
+                  operating_airline: "VY",
+                  marketing_flight_number: "2509",
+                  operating_flight_number: "2509"
                 }
               ]
             }
