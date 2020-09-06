@@ -58,9 +58,9 @@ app.post("/trip", async function(req, res, next) {
               segments: [
                 {
                   arrival_airport: "SEA",
-                  arrival_time: "2020-07-30T23:07:00-02:00",
+                  arrival_time: "2021-07-30T23:07:00-02:00",
                   departure_airport: "MIA",
-                  departure_time: "2020-07-30T19:35:00-02:00",
+                  departure_time: "2021-07-30T19:35:00-02:00",
                   fare_basis: "NVAHZSM3",
                   fare_class: "M",
                   fare_family: "",
