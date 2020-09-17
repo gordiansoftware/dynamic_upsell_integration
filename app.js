@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const url = "https://api.gordiansoftware.com/v2.2";
 
 /* New trip */
-app.post("/trip", async function(req, res, next) {
+app.post("/trip", async function (req, res, next) {
   let response = await fetch(url + "/trip", {
     method: "POST",
     headers: {
@@ -56,7 +56,7 @@ app.post("/trip", async function(req, res, next) {
           journeys: [
             {
               segments: [
-                 {
+                {
                   arrival_airport: "LAS",
                   departure_time: "2020-12-24T07:15:00-04:00",
                   departure_airport: "DTW",
@@ -90,7 +90,7 @@ app.post("/trip", async function(req, res, next) {
 });
 
 /* Fulfill */
-app.post("/fulfill", async function(req, res, next) {
+app.post("/fulfill", async function (req, res, next) {
   var fulfillUrl = url + "/trip/" + req.trip_id + "/fulfill";
   console.log("fulfill url: " + fulfillUrl);
   let response = await fetch(fulfillUrl, {
@@ -105,8 +105,6 @@ app.post("/fulfill", async function(req, res, next) {
   res.send(json);
 });
 
-var listener = app.listen(8080, function() {
+var listener = app.listen(8080, function () {
   console.log("Listening on port " + listener.address().port);
-});
-
 });
