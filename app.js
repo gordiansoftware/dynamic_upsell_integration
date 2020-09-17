@@ -56,18 +56,16 @@ app.post("/trip", async function(req, res, next) {
           journeys: [
             {
               segments: [
-                {
-                  arrival_airport: "SEA",
-                  arrival_time: "2021-07-30T23:07:00-02:00",
-                  departure_airport: "MIA",
-                  departure_time: "2021-07-30T19:35:00-02:00",
-                  fare_basis: "NVAHZSM3",
-                  fare_class: "M",
-                  fare_family: "",
-                  marketing_airline: "AA",
-                  operating_airline: "AA",
-                  marketing_flight_number: "305",
-                  operating_flight_number: "305"
+                 {
+                  arrival_airport: "LAS",
+                  departure_time: "2020-12-24T07:15:00-04:00",
+                  departure_airport: "DTW",
+                  arrival_time: "2020-12-24T08:49:00-07:00",
+                  fare_basis: "LKX9C3B4",
+                  fare_class: "L",
+                  fare_family: "ECONOMY_BASIC",
+                  marketing_airline: "NK",
+                  marketing_flight_number: "111"
                 }
               ]
             }
@@ -82,7 +80,7 @@ app.post("/trip", async function(req, res, next) {
             markup: 0,
             total: 7000
           },
-          state: "offered"
+          status: "offered"
         }
       ]
     })
