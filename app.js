@@ -57,15 +57,32 @@ app.post("/trip", async function (req, res, next) {
             {
               segments: [
                 {
-                  arrival_airport: "LAS",
-                  departure_time: "2020-12-24T07:15:00-04:00",
-                  departure_airport: "DTW",
-                  arrival_time: "2020-12-24T08:49:00-07:00",
-                  fare_basis: "LKX9C3B4",
-                  fare_class: "L",
-                  fare_family: "ECONOMY_BASIC",
+                  arrival_airport: "ATL",
+                  arrival_time: "2021-01-21T06:58:00-05:00",
+                  departure_airport: "LAX",
+                  departure_time: "2021-01-20T23:50:00-08:00",
+                  fare_basis: "WA7NR",
+                  fare_class: "W",
+                  fare_family: "book_it",
                   marketing_airline: "NK",
-                  marketing_flight_number: "111"
+                  marketing_flight_number: "1200",
+                  operating_airline: "NK",
+                  operating_flight_number: "1200",
+                  segment_id: "7092f993-ad94-4f76-815f-0b1936b1d970"
+                },
+                {
+                  arrival_airport: "LAS",
+                  arrival_time: "2021-01-21T10:03:00-08:00",
+                  departure_airport: "ATL",
+                  departure_time: "2021-01-21T08:30:00-05:00",
+                  fare_basis: "WA7NR",
+                  fare_class: "W",
+                  fare_family: "book_it",
+                  marketing_airline: "NK",
+                  marketing_flight_number: "2802",
+                  operating_airline: "NK",
+                  operating_flight_number: "2802",
+                  segment_id: "17922dd1-4a40-4590-823f-2234dd553674"
                 }
               ]
             }
