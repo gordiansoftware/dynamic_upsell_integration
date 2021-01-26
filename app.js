@@ -58,9 +58,9 @@ app.post("/trip", async function (req, res, next) {
               segments: [
                 {
                   arrival_airport: "ATL",
-                  arrival_time: "2021-01-21T06:58:00-05:00",
+                  arrival_time: "2021-03-21T06:58:00-05:00",
                   departure_airport: "LAX",
-                  departure_time: "2021-01-20T23:50:00-08:00",
+                  departure_time: "2021-03-20T23:50:00-08:00",
                   fare_basis: "WA7NR",
                   fare_class: "W",
                   fare_family: "book_it",
@@ -72,9 +72,9 @@ app.post("/trip", async function (req, res, next) {
                 },
                 {
                   arrival_airport: "LAS",
-                  arrival_time: "2021-01-21T10:03:00-08:00",
+                  arrival_time: "2021-03-21T10:03:00-08:00",
                   departure_airport: "ATL",
-                  departure_time: "2021-01-21T08:30:00-05:00",
+                  departure_time: "2021-03-21T08:30:00-05:00",
                   fare_basis: "WA7NR",
                   fare_class: "W",
                   fare_family: "book_it",
