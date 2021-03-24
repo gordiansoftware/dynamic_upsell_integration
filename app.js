@@ -13,6 +13,17 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const url = "https://api.gordiansoftware.com/v2.2";
 
+app.get("/trip/:trip_id", async function (req, res, next) {
+  let response = await fetch(url + "/trip/" + req.params.trip_id, {
+    headers: {
+      Authorization: "Basic " + Base64.encode(process.env.API_KEY + ":"),
+      "Content-Type": "application/json"
+    },
+  })
+  let json = await response.json();
+  res.send(json);
+})
+
 /* New trip */
 app.post("/trip", async function (req, res, next) {
   let response = await fetch(url + "/trip", {
@@ -40,7 +51,7 @@ app.post("/trip", async function (req, res, next) {
         },
         {
           passenger_type: "adult",
-          date_of_birth: "2019-01-01",
+          date_of_birth: "2000-01-01",
           first_names: "Ali",
           surname: "Reza",
           loyalty_program: {
@@ -106,9 +117,11 @@ app.post("/trip", async function (req, res, next) {
   res.send(json);
 });
 
+
+
 /* Fulfill */
 app.post("/fulfill", async function (req, res, next) {
-  var fulfillUrl = url + "/trip/" + req.trip_id + "/fulfill";
+  var fulfillUrl = url + "/trip/" + req.body.trip_id + "/fulfill";
   console.log("fulfill url: " + fulfillUrl);
   let response = await fetch(fulfillUrl, {
     method: "POST",
@@ -116,7 +129,47 @@ app.post("/fulfill", async function (req, res, next) {
       Authorization: "Basic " + Base64.encode(process.env.API_KEY + ":"),
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({})
+    // Using mock data here for this demo.
+    body: JSON.stringify({
+      "contact_details": {
+        "contact_details_type": "passenger",
+        "passenger_id": req.body.passenger_id,
+        "email": "joe@bloggs.com",
+        "phone_number": "1234567890",
+        "address": {
+          "city": "Seattle",
+          "state": "WA",
+          "country": "US",
+          "postal_code": "98105",
+          "street_address_1": "123 Street St.",
+        }
+      },
+      tickets: [
+        {
+          ticket_id: req.body.ticket_id,
+          access_details: {
+            record_locator: '123456'
+          },
+          status: 'booked'
+        }
+      ],
+      "payment_details": {
+        "payment_type": "card",
+        "card_number": 9231836912116018,
+        "cvv": 123,
+        "expiry_month": "05",
+        "expiry_year": "2040",
+        "card_holder_name": "Gordian Software",
+        "network": "visa",
+        "billing_address": {
+          "city": "Seattle",
+          "state": "WA",
+          "country": "US",
+          "postal_code": "98105",
+          "street_address_1": "123 Street St.",
+        }
+      }
+    })
   });
   let json = await response.json();
   res.send(json);
