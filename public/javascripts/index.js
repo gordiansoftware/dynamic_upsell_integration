@@ -23,6 +23,10 @@ const main = async () => {
   const onBasketChange = ({ basket }) => {
     console.log("Step 4: handle basket changes");
     var basketBody = document.getElementById("basket-body");
+
+    while (basketBody.firstChild) {
+      basketBody.removeChild(basketBody.firstChild)
+    }
     for (var key in basket) {
       const product = basket[key];
       var row = document.createElement("tr");
@@ -90,7 +94,7 @@ const main = async () => {
     await window.Gordian.showUpsell({
       container: document.getElementById("upsell-container"),
       display: "card", // card | embedded | modal
-      allowProducts: ["seats"]
+      allowProducts: ["seats", "bags"]
     }).catch(error => {
       console.error(`unable to show upsell: ${error.message}`);
     });

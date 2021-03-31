@@ -64,36 +64,42 @@ app.post("/trip", async function (req, res, next) {
       ],
       tickets: [
         {
-          journeys: [
+          "journeys": [
             {
-              segments: [
+              "journey_id": "00afd604-1d1a-480e-ba1b-c6eb9f5c396f",
+              "segments": [
                 {
-                  arrival_airport: "ATL",
-                  arrival_time: "2021-08-21T06:58:00-05:00",
-                  departure_airport: "LAX",
-                  departure_time: "2021-08-20T23:50:00-08:00",
-                  fare_basis: "WA7NR",
-                  fare_class: "W",
-                  fare_family: "book_it",
-                  marketing_airline: "NK",
-                  marketing_flight_number: "1200",
-                  operating_airline: "NK",
-                  operating_flight_number: "1200",
-                  segment_id: "7092f993-ad94-4f76-815f-0b1936b1d970"
-                },
+                  "arrival_airport": "PDX",
+                  "arrival_time": "2021-08-21T18:45:00-07:00",
+                  "departure_airport": "LAS",
+                  "departure_time": "2021-08-21T16:30:00-07:00",
+                  "fare_basis": "VA3NR",
+                  "fare_class": "V",
+                  "fare_family": "book_it",
+                  "marketing_airline": "NK",
+                  "marketing_flight_number": "2811",
+                  "operating_airline": "NK",
+                  "operating_flight_number": "2811",
+                  "segment_id": "2969bb44-497f-4163-869f-63e35b2c099c"
+                }
+              ]
+            },
+            {
+              "journey_id": "9c750d18-31a0-4bce-b744-df131b2a6dca",
+              "segments": [
                 {
-                  arrival_airport: "LAS",
-                  arrival_time: "2021-08-21T10:03:00-08:00",
-                  departure_airport: "ATL",
-                  departure_time: "2021-08-21T08:30:00-05:00",
-                  fare_basis: "WA7NR",
-                  fare_class: "W",
-                  fare_family: "book_it",
-                  marketing_airline: "NK",
-                  marketing_flight_number: "2802",
-                  operating_airline: "NK",
-                  operating_flight_number: "2802",
-                  segment_id: "17922dd1-4a40-4590-823f-2234dd553674"
+                  "arrival_airport": "LAS",
+                  "arrival_time": "2021-08-24T20:40:00-07:00",
+                  "departure_airport": "PDX",
+                  "departure_time": "2021-08-24T18:26:00-07:00",
+                  "fare_basis": "UA14NR",
+                  "fare_class": "U",
+                  "fare_family": "book_it",
+                  "marketing_airline": "NK",
+                  "marketing_flight_number": "1236",
+                  "operating_airline": "NK",
+                  "operating_flight_number": "1236",
+                  "segment_id": "5bf6482e-04a9-457d-b0ea-0a423b0c3e6b"
                 }
               ]
             }
