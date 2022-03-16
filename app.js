@@ -18,11 +18,11 @@ app.get("/trip/:trip_id", async function (req, res, next) {
     headers: {
       Authorization: "Basic " + Base64.encode(process.env.API_KEY + ":"),
       "Content-Type": "application/json"
-    },
-  })
+    }
+  });
   let json = await response.json();
   res.send(json);
-})
+});
 
 /* New trip */
 app.post("/trip", async function (req, res, next) {
@@ -64,42 +64,23 @@ app.post("/trip", async function (req, res, next) {
       ],
       tickets: [
         {
-          "journeys": [
+          journeys: [
             {
-              "journey_id": "00afd604-1d1a-480e-ba1b-c6eb9f5c396f",
-              "segments": [
+              journey_id: "00afd604-1d1a-480e-ba1b-c6eb9f5c396f",
+              segments: [
                 {
-                  "arrival_airport": "PDX",
-                  "arrival_time": "2021-08-21T18:45:00-07:00",
-                  "departure_airport": "LAS",
-                  "departure_time": "2021-08-21T16:30:00-07:00",
-                  "fare_basis": "VA3NR",
-                  "fare_class": "V",
-                  "fare_family": "book_it",
-                  "marketing_airline": "NK",
-                  "marketing_flight_number": "2811",
-                  "operating_airline": "NK",
-                  "operating_flight_number": "2811",
-                  "segment_id": "2969bb44-497f-4163-869f-63e35b2c099c"
-                }
-              ]
-            },
-            {
-              "journey_id": "9c750d18-31a0-4bce-b744-df131b2a6dca",
-              "segments": [
-                {
-                  "arrival_airport": "LAS",
-                  "arrival_time": "2021-08-24T20:40:00-07:00",
-                  "departure_airport": "PDX",
-                  "departure_time": "2021-08-24T18:26:00-07:00",
-                  "fare_basis": "UA14NR",
-                  "fare_class": "U",
-                  "fare_family": "book_it",
-                  "marketing_airline": "NK",
-                  "marketing_flight_number": "1236",
-                  "operating_airline": "NK",
-                  "operating_flight_number": "1236",
-                  "segment_id": "5bf6482e-04a9-457d-b0ea-0a423b0c3e6b"
+                  arrival_airport: "LAS",
+                  arrival_time: "2022-09-06T15:55:00",
+                  departure_airport: "SEA",
+                  departure_time: "2022-09-06T13:21:00",
+                  fare_basis: "VA3NR",
+                  fare_class: "V",
+                  fare_family: "book_it",
+                  marketing_airline: "NK",
+                  marketing_flight_number: "3208",
+                  operating_airline: "NK",
+                  operating_flight_number: "3208",
+                  segment_id: "2969bb44-497f-4163-869f-63e35b2c099c"
                 }
               ]
             }
@@ -123,8 +104,6 @@ app.post("/trip", async function (req, res, next) {
   res.send(json);
 });
 
-
-
 /* Fulfill */
 app.post("/fulfill", async function (req, res, next) {
   var fulfillUrl = url + "/trip/" + req.body.trip_id + "/fulfill";
@@ -137,42 +116,42 @@ app.post("/fulfill", async function (req, res, next) {
     },
     // Using mock data here for this demo.
     body: JSON.stringify({
-      "contact_details": {
-        "contact_details_type": "passenger",
-        "passenger_id": req.body.passenger_id,
-        "email": "joe@bloggs.com",
-        "phone_number": "1234567890",
-        "address": {
-          "city": "Seattle",
-          "state": "WA",
-          "country": "US",
-          "postal_code": "98105",
-          "street_address_1": "123 Street St.",
+      contact_details: {
+        contact_details_type: "passenger",
+        passenger_id: req.body.passenger_id,
+        email: "joe@bloggs.com",
+        phone_number: "1234567890",
+        address: {
+          city: "Seattle",
+          state: "WA",
+          country: "US",
+          postal_code: "98105",
+          street_address_1: "123 Street St."
         }
       },
       tickets: [
         {
           ticket_id: req.body.ticket_id,
           access_details: {
-            record_locator: '123456'
+            record_locator: "123456"
           },
-          status: 'booked'
+          status: "booked"
         }
       ],
-      "payment_details": {
-        "payment_type": "card",
-        "card_number": 9231836912116018,
-        "cvv": 123,
-        "expiry_month": "05",
-        "expiry_year": "2040",
-        "card_holder_name": "Gordian Software",
-        "network": "visa",
-        "billing_address": {
-          "city": "Seattle",
-          "state": "WA",
-          "country": "US",
-          "postal_code": "98105",
-          "street_address_1": "123 Street St.",
+      payment_details: {
+        payment_type: "card",
+        card_number: 9231836912116018,
+        cvv: 123,
+        expiry_month: "05",
+        expiry_year: "2040",
+        card_holder_name: "Gordian Software",
+        network: "visa",
+        billing_address: {
+          city: "Seattle",
+          state: "WA",
+          country: "US",
+          postal_code: "98105",
+          street_address_1: "123 Street St."
         }
       }
     })
