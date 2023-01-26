@@ -69,17 +69,17 @@ app.post("/trip", async function (req, res, next) {
               journey_id: "00afd604-1d1a-480e-ba1b-c6eb9f5c396f",
               segments: [
                 {
-                  arrival_airport: "MYR",
-                  arrival_time: "2022-09-19T11:21:00",
-                  departure_airport: "BOS",
-                  departure_time: "2022-09-19T09:11:00",
+                  arrival_airport: "LAS",
+                  arrival_time: "2023-08-07T05:15:00",
+                  departure_airport: "PDX",
+                  departure_time: "2023-08-07T07:26:00",
                   fare_basis: "TA3NR",
                   fare_class: "X",
                   fare_family: "Standard Fare",
                   marketing_airline: "NK",
-                  marketing_flight_number: "738",
+                  marketing_flight_number: "1722",
                   operating_airline: "NK",
-                  operating_flight_number: "738"
+                  operating_flight_number: "1722"
                 }
               ]
             }
